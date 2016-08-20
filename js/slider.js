@@ -3,7 +3,7 @@ window.onload = function () {
 	var imgWrapper = document.querySelector('.imgWrapper');
 	var slider = document.querySelector('.slider');
 	
-	// 在尾部添加第一张图片，初始化页码并添加事件监听，以便实现无限循环
+	// 在尾部添加第一张图片，初始化页码，以便实现无限循环
 	function init() {
 		// 添加图片
 		var newImg = imgWrapper.firstElementChild.cloneNode(true);
