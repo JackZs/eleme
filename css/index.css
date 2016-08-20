@@ -1,0 +1,482 @@
+/*1. 简单的css rest*/
+
+body,
+div,ul,li,h1,h2,h3,input {
+	margin: 0px;
+	padding 0px;
+}
+body {
+	background: #f7f7f7;
+	padding-right: 35px;
+	color: #333;
+	position: relative;
+}
+html {
+	font-size: 62.5%;
+}
+body,input {
+	font-size: 1.4rem;
+	font-family: "microsoft yahei", "microsoft sans serif";
+}
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+/*2. css样式库 常用颜色、图标字体等*/
+
+@font-face {
+	font-family: eleme;
+	src: url('../font/eleme.woff');
+}
+
+.container {
+	width: 1180px;
+	margin: 0px auto;
+}
+
+.cl:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+[class*="icon-"]:before {
+	font-family: eleme;
+	font-style: normal;
+}
+
+.icon-logo:before {
+	content: "\e92c";
+	font-size: 3.2rem;
+	font-weight: 300;
+}
+
+.icon-gift:before {
+	content: "\e91d";
+}
+
+.icon-service:before {
+	content: "\e94a";
+}
+
+.icon-mobile:before {
+	content: "\e92e";
+}
+
+.icon-log:before {
+	content: "\e945";
+}
+
+.icon-order:before {
+	content: "\e93c";
+}
+
+.icon-cart:before {
+	content: "\e908";
+}
+
+.icon-notice:before {
+	content: "\e92f";
+}
+
+.icon-code:before {
+	content: "\e946";
+}
+.icon-top:before{
+	content: "\e951";
+}
+.icon-search:before{
+	content: "\e949";
+}
+.icon-star:before{
+	content: '\e950\e950\e950\e950\e950';
+}
+.icon-wechat:before{
+	content: '\e96a';
+}
+.icon-weibo:before{
+	content: '\e96b';
+}
+/*省略号*/
+.ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.border-gray {
+	border: 1px solid #CCC;
+}
+/*3. 公共结构样式 导航、侧边栏等*/
+
+/*header begin*/
+header {
+	width: 100%;
+	min-width: 1180px;
+	height: 60px;
+	background-color: #1e89e0;
+	position: relative;
+	line-height: 60px;
+}
+header h1,
+header .container> a {
+	float: left;
+	color: #fff;
+}
+header h1 {
+	padding-right: 15px;
+}
+header .container> a {
+	font-size: 1.6rem;
+	padding: 0px 35px;
+}
+header .container > a:hover {
+	background-color: #0c77d1;
+}
+header nav {
+	float: right;
+	color: #d2e7f9;
+}
+header nav a {
+	padding: 0px 10px;
+	line-height: 100%;
+}
+header nav a:hover {
+	color: #fff;
+}
+header nav a:before {
+	font-size: 2.2rem;
+	padding-right: 5px;
+	position: relative;
+	top: 4px;
+}
+header nav a:last-child {
+	color: #fff;
+	padding-left: 100px;
+}
+header .head-focus{
+	background-color: #006bc7;
+}
+/*header end*/
+/*aside begin*/
+aside {
+	width: 35px;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	background: #504d53;
+	color: #ccc;
+	font-size: 1.4rem;
+	text-align: center;
+	box-sizing: border-box;
+	z-index: 10;
+}
+aside a {
+	display: block;
+	padding: 8px 8px;
+}
+aside a:hover{
+	background-color: #26a2ff;
+	color:#fff;
+}
+aside a[class*="icon-"]:before {
+	font-size: 2rem;
+	display: block;
+}
+aside a[class*="icon-cart"] {
+	font-weight: bold;
+}
+aside > div {
+	position: absolute;
+	box-sizing: border-box;
+}
+aside .side-top {
+	top: 15%;
+}
+aside .side-bottom {
+	bottom: 5%;
+}
+aside hr{
+	width: 60%;
+	border-top:1px solid #333;
+}
+/*aside end*/
+/*searchBox begin*/
+.searchBox {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.searchBox .address * {
+	display: block;
+	float: left;
+}
+.searchBox .address {
+	float: left;
+	font-size: 1.2rem;
+	margin-top:10px;
+}
+.searchBox .address span:nth-child(2) {
+	display: block;
+	width: 150px;
+}
+.searchBox .address a {
+	color: #1E89dc;
+}
+.searchBox .search {
+	float: right;
+	position: relative;
+}
+.searchBox .search input{
+	outline: none;
+	width: 250px;
+	padding:5px 20px 5px 0px;
+}
+.searchBox .search input:focus {
+	width: 300px;
+	transition: width 0.3s ease-in-out;
+}
+.searchBox .search:before{
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	color: #999;
+	font-size: 2rem;
+}
+/*searchBox end*/
+/*slider begin*/
+.slider{
+	height:100px;
+	overflow: hidden;
+	position: relative;
+}
+.slider .imgWrapper{
+	position: relative;
+	bottom: 0px;
+}
+.slider .imgWrapper img{
+	display: block;
+	vertical-align: top;
+	height:100px;
+	width: 100%;
+}
+.slider .pageNum {
+	position: absolute;
+	bottom: 10px;
+	right: 5px;
+	color: #999;
+}
+.slider .pageNum span{
+	margin: 0px 2px;
+	padding: 0px 3px;
+	background: rgba(255, 255, 255, 0.5);
+}
+.slider .pageNum .page-focus{
+	background-color: #f60;
+	color: #fff;
+	cursor: pointer;
+}
+/*filter begin*/
+.filter {
+	margin-top: 60px;
+	padding: 18px;
+	background-color: #fff;
+	position: relative;
+	box-sizing: border-box;
+}
+.filter .filter-name{
+	color: #999;
+}
+.filter a {
+	margin: 0px 10px;
+	padding: 4px 8px;
+}
+.filter a:hover{
+	background-color: #eee;
+	border-radius: 3px;
+}
+.filter .filter-focus{
+	color: #FFF;
+	background-color: #0089dc;
+	border-radius: 3px;
+}
+.filter .premium {
+	color: #f00;
+}
+.filter img {
+	width: 186px;
+	height: 55px;
+	position: absolute;
+	right: 0px;
+	top: -50px;
+}
+/*filter end*/
+/*tips begin*/
+.tips {
+	padding: 10px;
+	box-sizing: border-box;
+	margin-top: 10px;
+	background-color: #fffdee;
+	border: solid 1px #ffe4b9;
+}
+.tips span{
+	color: #f63;
+	font-size: 2rem;
+}
+.tips a{
+	color: #0089DC;
+}
+/*tips end*/
+/*stores begin*/
+.stores {
+	margin-top: 20px;
+	background-color: #fff;
+}
+.stores .storeBox{
+	float: left;
+	width: 25%;
+	padding: 20px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #eee;
+	font-size: 1.2rem;
+	color: #999;
+}
+.stores .left {
+	width: 40%;
+	float: left;
+	text-align: center;
+	padding-top: 10px;
+}
+.stores .left span{
+	display: block;
+	margin-top: 10px;
+}
+.stores .right{
+	width: 60%;
+	float: right;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+.stores .right p{
+	margin: 5px;
+}
+.stores .right .title{
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: #333;
+}
+.stores .right .saleNum{
+	position: relative;
+	display: inline-block;
+}
+.stores .right .saleNum i{
+	color: #f60;
+	position: absolute;
+	left: 0px;
+	width: 50%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.stores .right .price{
+	margin-bottom: 10px;
+}
+.stores .right .msg span{
+	display: inline-block;
+	padding: 1px 3px;
+	margin-right: 5px;
+	border-radius: 2px;
+}
+.stores .right .msg span:first-child{
+	color: #4b9a18;
+	border: 1px solid #4b9a18;
+}
+.stores .right .msg span:last-child{
+	color: #9071cb;
+	border: 1px solid #9071cb;
+}
+/*stores end*/
+/*moreStores begin*/
+.moreStore{
+	text-align: center;
+	color: #777;
+	font-size: 1.8rem;
+	padding: 15px 0px;
+	background: linear-gradient(to bottom, #f9f9f9, #ccc);
+	margin-bottom: 50px;
+}
+/*moreStores end*/
+/*footer begin*/
+footer {
+	border-top: solid 1px #CCCCCC;
+	padding-top: 50px;
+}
+footer .links, footer .ourMsg{
+	float: left;
+}
+footer .mobile{
+	float: right;
+}
+footer .links ul{
+	float: left;
+	color: #999;
+	font-size: 1.2rem;
+	margin-right: 100px;
+	padding-left: 0px;
+}
+footer .links ul li{
+	margin-bottom: 10px;
+}
+footer .links ul li:first-child{
+	color: #333;
+	font-size: 1.4rem;
+}
+footer .ourMsg {
+	margin-left:50px;
+	color: #666;
+	border-left: 1px solid #CCCCCC;
+}
+footer .ourMsg ul li{
+	margin-bottom: 20px;
+}
+footer .ourMsg [class^="icon-"]:before{
+	font-size: 2.4rem;
+	color: #CCCCCC;
+	margin: 0px 5px;
+	line-height: 1.4rem;
+}
+footer .mobile > *{
+	float: left;
+}
+footer .mobile img{
+	width: 90px;
+	height: 90px;
+}
+footer .mobile div{
+	padding: 20px 0px 0px 10px;
+}
+footer .mobile h1{
+	font-size: 1.6rem;
+	
+}
+footer .mobile p {
+	font-size: 1.2rem;
+}
+/*footer end*/
+/*police begin*/
+.police {
+	margin: 50px 0px;
+	text-align: center;
+	font-size: 1.2rem;
+	color: #999;
+}
+.police img{
+	height: 30px;
+}
+/*police end*/
+
+/*4. 精细结构样式*/
+
+
+/*5. test*/
